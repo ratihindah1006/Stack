@@ -35,7 +35,7 @@ struct elemen {
 		}
 		else
 		{
-		cout<<"\t\tStack Telah Di Pop\n";
+		cout<<"\t\tInput-an terakhir yang di push telah di Pop\n";
 		elemen *baru = top ;
 		top = top -> next ;
 		delete(baru);
@@ -60,7 +60,7 @@ struct elemen {
 		}
 		else
 		{
-			cout << "Isi Tumpukan : " << endl;
+			cout << "Isi Tumpukan : " << endl<<endl;
 			elemen *baru = top;
 			while(baru!=NULL)
 			{	
