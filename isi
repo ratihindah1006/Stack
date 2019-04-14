@@ -1,0 +1,133 @@
+//nama : ratih indah wardani
+//NPM  : 1817051006
+#include <iostream>
+
+using namespace std;
+
+struct elemen {
+	int data;
+    elemen *next;
+};
+
+	elemen *top = NULL;
+	bool isEmpty()
+	{
+    	if(top == NULL)
+		return true; 
+		else
+		return false;
+  }
+
+	void push(int input)
+	{
+		elemen *baru = new elemen;
+		baru->data = input ;
+		baru->next = top ;
+		top = baru;
+		cout<<"\t\t"<<input<<" dimasukkan ke dalam Stack \n";
+	}	
+
+	void pop ()
+	{
+		if (isEmpty())
+		{
+			cout<<"Stack Kosong";
+		}
+		else
+		{
+		cout<<"\t\tStack Telah Di Pop\n";
+		elemen *baru = top ;
+		top = top -> next ;
+		delete(baru);
+		}
+	}
+
+	void GetTop()
+	{
+		if ( isEmpty() )
+		cout<<"Stack Kosong";
+		else
+		cout<<"Elemen paling atas : "<<top->data;
+		cout<<endl;
+	}
+
+	void list()
+	{
+		elemen *baru = top ;
+		if(isEmpty())
+		{
+			cout << "Tumpukan Kosong" << endl;
+		}
+		else
+		{
+			cout << "Isi Tumpukan : " << endl;
+			elemen *baru = top;
+			while(baru!=NULL)
+			{	
+			cout<<"|"<<baru->data<<"|"<<endl;
+			baru=baru->next;
+			}
+			cout<<endl<<endl;
+		}
+	}
+
+int nama();
+
+int main()
+{
+	int pilih, tanda=1, nilai, menu;
+	menu = nama();
+
+ while( tanda == 1){
+
+cout<<endl<<endl<<endl;
+   
+cout<<"===================\n";
+cout<<"|     PILIHAN     |\n";
+cout<<"===================\n";
+cout<<"1. Push \n";
+cout<<"2. Pop \n";
+cout<<"3. GetTop \n";
+cout<<"4. print stuck \n";
+cout<<"5. exit \n";
+cout<<"===================\n";
+   
+cout<<"Pilih : ";cin>>pilih;
+
+	switch (pilih)
+	{
+	case 1: cout<<"Masukan Nilai : ";
+			cin>>nilai;
+			push(nilai);
+			break;
+			
+	case 2: pop();
+			break;
+			
+	case 3: GetTop();		
+			break;
+			
+	case 4: list();
+			break;
+			
+	case 5: tanda = 0;
+			cout << endl << endl;
+			break;
+			
+	default:
+			cout <<"\t\nPilihan tidak ada";
+			cin.get();
+			break;
+         
+ 	}
+ }
+    return 0;
+}
+int nama()
+{
+cout<<"\t\t============================================"<<endl;
+cout<<"\t\t|                                           |"<<endl;
+cout<<"\t\t|      PROGRAM OLEH RATIH INDAH WARDANI     |"<<endl;
+cout<<"\t\t|                                           |"<<endl;
+cout<<"\t\t============================================"<<endl<<endl;
+}
